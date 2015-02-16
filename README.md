@@ -1,5 +1,6 @@
-This module contains test video-files that can be used to test video-conversion
-to different formats.
+This module is a loader for the test video-files contained
+in [the video-testdata package](http://github.com/nknapp/video-testdata)
+Those can be used to test video-conversion to different formats.
 
 ## Usage
 
