@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/nknapp/video-testdata-loader",
   "dependencies": {
-    "video-testdata": "nknapp/video-testdata#1.1.0",
+    "video-testdata": "nknapp/video-testdata#fb31160aa7bff5d52743d9dfe2b5c0290d957f5a",
     "rimraf": "^2.2.8",
     "event-stream": "^3.2.2",
     "tar": "^1.0.3",
