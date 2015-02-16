@@ -1,0 +1,34 @@
+{
+  "name": "video-testdata-loader",
+  "version": "1.0.0",
+  "description": "Provides methods to easily access the files in \"video-testdata\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nknapp/video-testdata-loader.git"
+  },
+  "keywords": [
+    "video",
+    "test",
+    "data"
+  ],
+  "author": "Nils Knappmeier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nknapp/video-testdata-loader/issues"
+  },
+  "homepage": "https://github.com/nknapp/video-testdata-loader",
+  "dependencies": {
+    "video-testdata": "nknapp/video-testdata#1.1.0",
+    "rimraf": "^2.2.8",
+    "event-stream": "^3.2.2",
+    "tar": "^1.0.3",
+    "tempfile": "^1.1.0"
+  },
+  "devDependencies": {
+    "trace": "^1.1.0"
+  }
+}
