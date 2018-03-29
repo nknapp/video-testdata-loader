@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Provides methods to easily access the files in \"video-testdata\"",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "postinstall": "node build/createTypeDeclarations.js"
   },
   "files": [
     "index.js"
