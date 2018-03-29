@@ -4,37 +4,30 @@ Those can be used to test video-conversion to different formats.
 
 ## Usage
 
-Syntax: `require("video-testData-loader")("<filename>",["<innerFile>"], callback(err,file))`
+Syntax: `const file = await loadData("<filename>",["<innerFile>"])`
 
-The callback-parameter `file` contains the path to the requested file (see below).
+The call returns a promise that resolves to the target file once it is ready.
 If the file is a tar-file, it is automatically extracted and `file` will point to
 a temporary directory containing the extracted data.
-If the file is a tar-file, a `innerFile` may be provided. `file` will then point to
+If the file is a tar-file, an `innerFile` may be provided. `file` will then point to
 this file within the extracted tar-file.
 
 
 ```js
 
 var loadData = require("video-testData-loader");
-loadData("2-video-unstreamable.mp4",function(err, file) {
-    // do something
+
+const file = await loadData("2-video-unstreamable.mp4")
 });
 
 // ... or, for tar-files ...
 
-loadData("panasonic-lumix-dmc-zx3.tar","PRIVATE/AVCHD/BDMV/STREAM/00000.MTS",function(err, file) {
-    // do something
-});
+const file = await loadData("panasonic-lumix-dmc-zx3.tar","PRIVATE/AVCHD/BDMV/STREAM/00000.MTS")
 
 // ... or ... ,
 
-loadData("panasonic-lumix-dmc-zx3.tar",function(err, directory) {
-    // directory is the root of the extracted tar-file
-});
-
-
-// To just retrieve the file (without extracting tar-files, you can also do:
-var file = loadData("2-video-unstreamable.mp4");
+const directory = loadData("panasonic-lumix-dmc-zx3.tar")
+// directory is the root of the extracted tar-file
 ```
 
 ## Files
