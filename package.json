@@ -9,6 +9,7 @@
     "postinstall": "node build/createTypeDeclarations.js"
   },
   "files": [
+    "build",
     "index.js"
   ],
   "repository": {
