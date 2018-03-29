@@ -1,7 +1,8 @@
 const fs = require('fs')
+const path = require('path')
 
 function dataFiles () {
-  return fs.readdirSync('node_modules/video-testdata/data')
+  return fs.readdirSync(path.join(__dirname, '..', 'node_modules', 'video-testdata', 'data'))
     .map(file => `"${file}"`)
     .join(' | ')
 }
