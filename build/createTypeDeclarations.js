@@ -2,7 +2,8 @@ const fs = require('fs')
 const path = require('path')
 
 function dataFiles () {
-  return fs.readdirSync(path.join(__dirname, '..', 'node_modules', 'video-testdata', 'data'))
+  const videoTestdata = path.dirname(require.resolve('video-testdata/package.json'))
+  return fs.readdirSync(path.join(videoTestdata, 'data'))
     .map(file => `"${file}"`)
     .join(' | ')
 }
