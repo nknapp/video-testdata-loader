@@ -23,4 +23,16 @@ describe('the video-testdata-loader', function () {
     assert.equal(path.basename(file), '0-novideo.mp4', 'Must be the test-file.')
     assert(fs.statSync(file).isFile(), 'Must exist as regular file')
   })
+
+  it('should copy files to a specified location', async function () {
+    const file = await loader('0-novideo.mp4', {to: 'testTmp/0-novideo.mp4'})
+    assert.equal(file, 'testTmp/0-novideo.mp4', 'Must be the test-file.')
+    assert(fs.statSync(file).isFile(), 'Must exist as regular file')
+  })
+
+  it('should tar-files to the specified directory', async function () {
+    const file = await loader('samsung-smx-f40bp-edc.tar', {to: 'testTmp/tmp.tar'})
+    assert.equal(file, 'testTmp/tmp.tar', 'Must be the test-file.')
+    assert(fs.statSync(file).isDirectory(), 'Must exist as directory')
+  })
 })

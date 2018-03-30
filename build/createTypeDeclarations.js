@@ -15,8 +15,12 @@ declare module 'video-testdata-loader' {
   /**
    * Load testdata
    **/
-  function loadData(file: validInputFiles): Promise<string>;
+  function loadData(file: validInputFiles, innerFile: string, options?: LoadDataOptions): Promise<string>;
+  function loadData(file: validInputFiles, options?: LoadDataOptions): Promise<string>;
   export = loadData;
 
+  interface LoadDataOptions {
+    to: string
+  }
 }
 `)

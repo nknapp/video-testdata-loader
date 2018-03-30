@@ -4,7 +4,7 @@ Those can be used to test video-conversion to different formats.
 
 ## Usage
 
-Syntax: `const file = await loadData("<filename>",["<innerFile>"])`
+Syntax: `const file = await loadData("<filename>",["<innerFile>"], [options])`
 
 The call returns a promise that resolves to the target file once it is ready.
 If the file is a tar-file, it is automatically extracted and `file` will point to
@@ -12,13 +12,23 @@ a temporary directory containing the extracted data.
 If the file is a tar-file, an `innerFile` may be provided. `file` will then point to
 this file within the extracted tar-file.
 
+### Options
+
+"options" is an object that can have the following properties
+
+* `to`: The file to copy the media file to, or the name of the directory to extract the tar file to.
+
+### Examples
 
 ```js
 
 var loadData = require("video-testData-loader");
 
 const file = await loadData("2-video-unstreamable.mp4")
-});
+
+// ... or,
+
+const file = await loadData("2-video-unstreamable.mp4", { to: "testTmp/video.mp4" })
 
 // ... or, for tar-files ...
 
@@ -28,7 +38,10 @@ const file = await loadData("panasonic-lumix-dmc-zx3.tar","PRIVATE/AVCHD/BDMV/ST
 
 const directory = loadData("panasonic-lumix-dmc-zx3.tar")
 // directory is the root of the extracted tar-file
+
 ```
+
+
 
 ## Files
 
