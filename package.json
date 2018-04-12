@@ -1,6 +1,6 @@
 {
   "name": "video-testdata-loader",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Provides methods to easily access the files in \"video-testdata\"",
   "main": "index.js",
   "types": "index.d.ts",
