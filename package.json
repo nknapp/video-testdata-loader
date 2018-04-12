@@ -32,7 +32,7 @@
     "tar": "^4.4.1",
     "tempfile": "^1.1.0",
     "trace-and-clarify-if-possible": "^1.0.3",
-    "video-testdata": "https://gachou.gitlab.io/video-testdata/package.tar.gz"
+    "video-testdata": "https://gachou.gitlab.io/video-testdata/video-testdata.tgz"
   },
   "devDependencies": {
     "chai": "^4.1.2",
